@@ -4,8 +4,7 @@ window.addEventListener('load',function(){
     let service_mom = document.getElementById('service');
     let service_out = document.querySelector('#service_out');
     let service_in = document.getElementById('service_inner');
-    service_out.addEventListener('click',function(){
-        alert(service_out+'service_out');
+    service_out.addEventListener('click',function(){       
         service_in.classList.toggle('active');
         service_mom.classList.toggle('active');
     });
@@ -36,9 +35,9 @@ window.addEventListener('load',function(){
         slideClass:'main_banner', //슬라이드 요소의 공통된 클래스명
         effect:'fade', //전환효과
         loop:true, //슬라이드가 반복됨.
-        //autoplay: { //자동슬라이드
-        //delay: 5000, //2000=2초마다 전환됨.
-        //}
+        autoplay: { //자동슬라이드
+        delay: 5000, //2000=2초마다 전환됨.
+        }
     });
 
     let welfare1 = new Swiper('#welfare1_wrap',{
@@ -65,6 +64,10 @@ window.addEventListener('load',function(){
         slideClass:'partner_ri_li',
         slidesPerView: 5,
         loop:true, //슬라이드가 반복됨.
+        autoplay: { //자동슬라이드
+            delay: 3000, //2000=2초마다 전환됨.
+              },
+
     })
 
     let view = new Swiper('.news_view', {
