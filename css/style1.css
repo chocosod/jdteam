@@ -12,7 +12,7 @@
 .clearfix::after {
   clear: both;
   content: "";
-  display: inline-block;
+  display: block;
 }
 
 html {
@@ -30,30 +30,44 @@ body {
   font-weight: 600;
 }
 
-/*header*/
-#top_gnb {
-  height: 115px;
-  background: #fff;
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-  display: flex;
-  align-items: center;
+header {
   position: fixed;
   width: 100%;
   z-index: 999;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  background: #fff;
+}
+
+/*header*/
+#top_gnb {
+  height: 115px;
+  display: flex;
+  align-items: center;
   font-weight: 600;
+  transition: all 0.4s ease-in-out;
+  padding: 0 7.291%;
+  position: relative;
+}
+
+#top_gnb.scrolled {
+  height: 80px;
 }
 
 #logo {
-  width: 233px;
-  height: 30px;
+  width: 269.8x;
+  height: 33px;
   white-space: nowrap;
-  margin-left: 7.291%;
   margin-bottom: 10px;
+}
+#logo img {
+  width: 269.8x;
+  height: 33px;
 }
 
 #gnb_le {
-  margin-left: 4.531%;
   white-space: nowrap;
+  width: 100%;
+  margin-left: 4.531%;
 }
 #gnb_le .gnb_le_fist {
   display: flex;
@@ -66,7 +80,7 @@ body {
   font-weight: bold;
   position: relative;
   padding-bottom: 30px;
-  margin-top: 20px;
+  margin-top: 29px;
 }
 #gnb_le .gnb_le_fist > li:first-child {
   margin-left: 0;
@@ -91,20 +105,20 @@ body {
   margin: 0;
 }
 #gnb_le::after {
-  width: 1920px;
+  width: 100%;
   height: 0px;
   background-color: #fff;
   content: "";
   position: absolute;
   left: 0;
   transition: all 0.4s ease-in-out;
-  overflow: hidden;
-  margin-top: 0px;
+  margin-top: -10px;
+  z-index: -1;
 }
 
 #gnb_le:hover::after {
   height: 280px;
-  z-index: -1;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
 }
 
 #gnb_le .gnb_le_fist > li:hover {
@@ -122,7 +136,6 @@ body {
 
 #gnb_re {
   white-space: nowrap;
-  margin-left: 20.885%;
 }
 #gnb_re ul {
   display: flex;
@@ -160,6 +173,7 @@ body {
   height: calc(100vh - 115px);
   position: relative;
   padding-top: 115px;
+  overflow: hidden;
 }
 
 #main_baner_in {
@@ -184,20 +198,17 @@ body {
   position: absolute;
   font-size: 4.375rem;
   top: 174px;
-  left: 530px;
+  left: 50%;
+  transform: translateX(-50%);
   font-weight: bold;
+  white-space: nowrap;
 }
 #main_baner_in .main_banner p:nth-child(3) {
   position: absolute;
   font-size: 1.375rem;
   top: 271px;
-  left: 645px;
-}
-#main_baner_in .main_banner p.main_banner_2_p1 {
-  left: 400px;
-}
-#main_baner_in .main_banner p.main_banner_2_p2 {
-  left: 630px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /*#search*/
@@ -208,7 +219,8 @@ body {
   position: absolute;
   border-radius: 32px;
   top: 502px;
-  left: 704px;
+  left: 50%;
+  transform: translateX(-50%);
   box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
 }
 #search input {
@@ -240,7 +252,8 @@ body {
 #service {
   position: absolute;
   bottom: -225px;
-  left: 484px;
+  left: 50%;
+  transform: translateX(-473px);
   transition: all 0.4s ease-in-out;
 }
 #service #service_out p:nth-child(1) {
@@ -260,6 +273,7 @@ body {
   visibility: hidden;
   opacity: 0;
   transition: all 0.4s ease-in-out;
+  border: 1px solid red;
 }
 #service #service_inner p {
   position: absolute;
@@ -309,6 +323,7 @@ body {
 /* #notice */
 #notice {
   position: relative;
+  margin-top: 50px;
 }
 #notice h3 {
   width: 245px;
@@ -320,7 +335,7 @@ body {
   font-size: 1.5625rem;
   color: #fff;
   position: absolute;
-  top: 9.166vw;
+  top: 5.166vw;
   left: 140px;
 }
 #notice p:nth-child(2) {
@@ -400,7 +415,7 @@ body {
   max-width: 85.416%;
   height: 4.427vw;
   background-color: #175FF2;
-  margin: 12.187vw auto 0;
+  margin: 13.187vw auto 0;
   position: relative;
   font-weight: bold;
   line-height: 4.427vw;
@@ -410,7 +425,7 @@ body {
   height: 123px;
   position: absolute;
   bottom: 0px;
-  left: 22.865%;
+  left: 12.865%;
 }
 #inform p:nth-child(2) {
   font-size: 1.25rem;
@@ -437,13 +452,13 @@ body {
 
 /*#welfare*/
 #welfare_section {
-  margin-top: 5.885%;
+  margin-top: 8.885%;
   background-color: #F3F3F3;
   width: 100%;
-  height: 900px;
   color: #333;
   padding-top: 112px;
   position: relative;
+  padding-bottom: 6.1979%;
 }
 #welfare_section h3 {
   font-size: 1.6875rem;
@@ -452,10 +467,9 @@ body {
   margin: 0 0 95px 408px;
   background: #2F6DEE;
   width: 268px;
-  height: 46px;
   border-radius: 46px;
   text-align: center;
-  line-height: 46px;
+  line-height: 2.0537;
 }
 
 .welfare_li.swiper-slide-prev {
@@ -464,8 +478,8 @@ body {
 }
 
 #welfare1_wrap {
-  width: 1271px;
-  padding-left: 408px;
+  width: 66.1979vw;
+  padding: 0 10px 10px 21.25vw;
   overflow: hidden;
   position: relative;
 }
@@ -478,23 +492,27 @@ body {
   flex-shrink: 0;
   transition: all 0.4s ease-in-out;
   position: relative;
+  box-shadow: 0 3px 6px #707070;
 }
 #welfare1_in #welfare1_in_le {
-  width: 790px;
-  height: 528px;
+  width: 41.145vw;
   float: left;
-  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
+}
+#welfare1_in #welfare1_in_le img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/0.66835;
 }
 #welfare1_in #welfare1_in_ri {
-  width: 480px;
-  height: 528px;
+  width: 25vw;
   float: left;
   position: relative;
   background-color: #fff;
-  box-shadow: 0 5px 6px rgba(0, 0, 0, 0.16);
+  padding-bottom: 4.2vw;
 }
 #welfare1_in #welfare1_in_ri .welfare_num {
-  padding: 32px 0 0 54px;
+  padding: 1.67vw 0 0 2.8125vw;
   font-size: 1.25rem;
 }
 #welfare1_in #welfare1_in_ri .welfare_num span {
@@ -502,30 +520,31 @@ body {
 }
 #welfare1_in #welfare1_in_ri .welfare_title {
   font-size: 1.875rem;
-  margin: 21px 0 0 51px;
+  margin: 1.0937vw 0 0 2.6562vw;
   color: #2F6DEE;
   font-weight: bold;
 }
 #welfare1_in #welfare1_in_ri p:nth-child(3) {
   position: absolute;
-  left: 295px;
-  top: 92px;
+  left: 6.09375vw;
+  top: 5.83vw;
   font-size: 0.9375rem;
   color: #2F6DEE;
 }
 #welfare1_in #welfare1_in_ri .welfare_note {
   font-size: 18px;
-  width: 354px;
-  margin: 117px 0 0 45px;
+  width: 18.4375vw;
+  margin: 6.09375vw 0 0 2.34375vw;
   line-height: 1.3125;
 }
 #welfare1_in #welfare1_in_ri .welfare_call {
   font-size: 18px;
   margin: 33px 0 0 45px;
+  font-weight: bolder;
 }
 #welfare1_in #welfare1_in_ri hr {
-  width: 409px;
-  border-color: #2F6DEE;
+  width: 21.3vw;
+  border-color: rgba(47, 109, 238, 0.3);
   margin: 21px 0 0 30px;
 }
 #welfare1_in #welfare1_in_ri .welfare_detail {
@@ -536,20 +555,31 @@ body {
   border-radius: 15px;
   margin: 42px 0 0 45px;
   text-align: center;
-  box-shadow: 0 3px 6px #707070;
+  box-shadow: 0 2px 2px #707070;
 }
 
 #welfare_next {
   position: absolute;
-  right: 150px;
-  top: 490px;
+  right: 7.8125vw;
+  top: 25.52vw;
   cursor: pointer;
+}
+
+#welfare_prev {
+  position: absolute;
+  left: 0px;
+  top: 310px;
+  cursor: pointer;
+  border: 1px solid red;
+  width: 13.5vw;
+  padding-top: 22.395vw;
 }
 
 #welfare-pagination {
   cursor: pointer;
   position: absolute;
-  left: 887px;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 50px;
 }
 #welfare-pagination span {
@@ -623,13 +653,17 @@ body {
   text-align: center;
   color: #848484;
   float: left;
-  position: relative;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
 }
 .newsroom .plus a {
   margin-top: 13px;
 }
 .newsroom .plus:hover a {
   color: #ffa43b;
+}
+.newsroom .plus:hover {
+  margin-top: 120px;
 }
 .newsroom .news_text {
   float: left;
@@ -666,17 +700,17 @@ body {
 }
 .newsroom .prev {
   position: absolute;
-  bottom: 368px;
+  bottom: 238px;
   left: -50px;
 }
 .newsroom .next {
   position: absolute;
-  bottom: 368px;
+  bottom: 238px;
   right: -50px;
 }
 .newsroom .pager {
   position: absolute;
-  bottom: 570px;
+  bottom: 4400px;
   right: 80px;
   font-size: 1.37rem;
   font-weight: bold;
@@ -689,7 +723,7 @@ body {
   background: url("../img/dome.png") no-repeat;
   width: 100%;
   height: 565px;
-  margin: 280px 0 245px 0;
+  margin: 410px 0 245px 0;
   /*.xi-long-arrow-right{width:;}*/
 }
 #dome .dome_menu {
@@ -788,7 +822,6 @@ body {
 }
 #sns {
   width: 100%;
-  height: 704px;
   background: url(../img/sns_back.png);
 }
 #sns .inner {
@@ -938,36 +971,13 @@ body {
 #partner .partner_ri_ul {
   display: flex;
   width: 1200px;
+  align-items: center;
 }
 #partner .partner_ri_ul li {
   cursor: pointer;
 }
-#partner .partner_ri_ul li:nth-child(1) {
+#partner .partner_ri_ul li {
   padding: 38px 0px 40px 0;
-  flex-shrink: 0;
-}
-#partner .partner_ri_ul li:nth-child(2) {
-  padding: 37px 0px 37px 0;
-  flex-shrink: 0;
-}
-#partner .partner_ri_ul li:nth-child(3) {
-  padding: 41px 0px 41px 0;
-  flex-shrink: 0;
-}
-#partner .partner_ri_ul li:nth-child(4) {
-  padding: 42px 0px 42px 0;
-  flex-shrink: 0;
-}
-#partner .partner_ri_ul li:nth-child(5) {
-  padding: 41px 0px 41px 0;
-  flex-shrink: 0;
-}
-#partner .partner_ri_ul li:nth-child(6) {
-  padding: 42px 0px 42px 0;
-  flex-shrink: 0;
-}
-#partner .partner_ri_ul li:nth-child(7) {
-  padding: 37px 0;
   flex-shrink: 0;
 }
 
@@ -996,6 +1006,7 @@ footer #f_service {
   display: flex;
   align-items: center;
   padding-top: 72px;
+  justify-content: space-around;
 }
 footer #f_service h4 {
   font-size: 1.19rem;
@@ -1104,6 +1115,9 @@ footer #f_nav li::after {
   top: 10%;
   right: -28px;
 }
+footer #f_nav li:last-child::after {
+  display: none;
+}
 footer #f_adress {
   margin-top: 37px;
   font-weight: 400;
@@ -1128,6 +1142,9 @@ footer #f_adress li::after {
   top: 10%;
   right: -28px;
 }
+footer #f_adress li:last-child::after {
+  display: none;
+}
 footer #f_copy {
   margin: 37px 0px 58px;
   opacity: 60%;
@@ -1149,9 +1166,9 @@ footer #f_certi li:nth-child(2) {
   margin-left: 39px;
 }
 footer #footer_up {
-  position: absolute;
-  right: -100px;
-  top: -80px;
+  position: fixed;
+  right: 23px;
+  bottom: 283px;
   font-size: 11px;
   font-weight: bold;
   color: #333;
@@ -1185,4 +1202,6 @@ footer #footer_up span {
 }
 footer hr {
   margin-top: 13.5px;
-}/*# sourceMappingURL=style1.css.map */
+}
+
+/* pc환경: 환경의 너비가 1024px이하인 경우*//*# sourceMappingURL=style1.css.map */
