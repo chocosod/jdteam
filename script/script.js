@@ -55,8 +55,9 @@ window.addEventListener('load',function(){
           },   
           navigation: {
             nextEl: "#welfare_next",
+            prevEl: "#welfare_prev",
           },
-        
+        spaceBetween: 20,
     }); 
    
     let partner = new Swiper('#partner_ri',{
@@ -89,6 +90,9 @@ window.addEventListener('load',function(){
     }); //end:new Swiper() 
 
 
+
+
+
 });
 
 
@@ -101,4 +105,20 @@ var sgc2 = new ScrollGiveClass(".dome_menu", {
     baseline:'middle',
     add:0.1,
 });
+
+function scrolled(){
+    var win_y = this.window.scrollY;
+    var area = document.getElementById('top_gnb');
+    if(800 < win_y)
+    {   area.classList.add('scrolled')
+
+    }else{
+        area.classList.remove('scrolled');
+    }
+    
+}
+
+
+window.addEventListener('scroll',scrolled)
+
 
